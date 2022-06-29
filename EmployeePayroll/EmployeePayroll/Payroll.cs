@@ -32,26 +32,29 @@ namespace EmployeePayrollService
                 });
                 Thread.Start();
             }
-        } 
+        }
         public void createRecord(EmployeeProfile profile)
         {
             SqlConnection connect = new SqlConnection(connectionString);
-            using (connect)
+            lock (this)
             {
-                connect.Open();
-                SqlCommand command = new SqlCommand("SpAddEmployeeDetails", connect);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@name", profile.Name);
-                command.Parameters.AddWithValue("@salary", profile.salary);
-                command.Parameters.AddWithValue("@startDate", profile.DateTime);
-                command.Parameters.AddWithValue("@Gender", profile.gender);
-                command.Parameters.AddWithValue("@phone_number", profile.phone);
-                command.Parameters.AddWithValue("@address", profile.address);
-                command.Parameters.AddWithValue("@department", profile.dept);
-                command.Parameters.AddWithValue("@basic_pay", profile.basicPay);
-                command.ExecuteNonQuery();
-                Console.WriteLine("Record created successfully.");
-                connect.Close();
+                using (connect)
+                {
+                    connect.Open();
+                    SqlCommand command = new SqlCommand("SpAddEmployeeDetails", connect);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@name", profile.Name);
+                    command.Parameters.AddWithValue("@salary", profile.salary);
+                    command.Parameters.AddWithValue("@startDate", profile.DateTime);
+                    command.Parameters.AddWithValue("@Gender", profile.gender);
+                    command.Parameters.AddWithValue("@phone_number", profile.phone);
+                    command.Parameters.AddWithValue("@address", profile.address);
+                    command.Parameters.AddWithValue("@department", profile.dept);
+                    command.Parameters.AddWithValue("@basic_pay", profile.basicPay);
+                    command.ExecuteNonQuery();
+                    Console.WriteLine("Record created successfully.");
+                    connect.Close();
+                }
             }
         }
     }

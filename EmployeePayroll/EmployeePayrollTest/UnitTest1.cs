@@ -14,14 +14,14 @@ namespace EmployeePayrollTest
             employeeProfiles.Add(new EmployeeProfile(id: 12, name: "Nachiket", salary: 24000, dateTime: DateTime.Now, gender: "M", phone: 7844558768, address: "Delhi", dept: "Marketing", basicPay: 24000, deductions: 1500, taxablePay: 1400, incomeTax: 2400, netPay: 22000));
             employeeProfiles.Add(new EmployeeProfile(id: 13, name: "Akash", salary: 25000, dateTime: DateTime.Now, gender: "M", phone: 904374325, address: "Bangalore", dept: "IT", basicPay: 25000, deductions: 1600, taxablePay: 1500, incomeTax: 2500, netPay: 23000));
 
-            //UC1 - to calculate time without Thread
+            //UC1 - calculate time without Thread
             Payroll payroll = new Payroll();
             DateTime startTime = DateTime.Now;
             payroll.addEmployee(employeeProfiles);
             DateTime endTime = DateTime.Now;
             Console.WriteLine("Time required to add multiple employees without using Thread: " + (endTime - startTime));
 
-            //UC2-To calculate Time with Thread
+            //UC2-calculate Time with Thread
             DateTime startThread = DateTime.Now;
             payroll.addEmployeeWithThread(employeeProfiles);
             DateTime endThread = DateTime.Now;
