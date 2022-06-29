@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeePayrollService", "EmployeePayroll\EmployeePayrollService.csproj", "{6D622074-7047-4764-8181-18ACD7459884}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeePayrollTest", "EmployeePayrollTest\EmployeePayrollTest.csproj", "{5C1CF404-9373-42FA-8E70-05317BB3FA5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6D622074-7047-4764-8181-18ACD7459884}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D622074-7047-4764-8181-18ACD7459884}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D622074-7047-4764-8181-18ACD7459884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1CF404-9373-42FA-8E70-05317BB3FA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1CF404-9373-42FA-8E70-05317BB3FA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1CF404-9373-42FA-8E70-05317BB3FA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1CF404-9373-42FA-8E70-05317BB3FA5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

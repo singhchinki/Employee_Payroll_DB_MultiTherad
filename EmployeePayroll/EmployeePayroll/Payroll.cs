@@ -21,6 +21,18 @@ namespace EmployeePayrollService
                 Console.WriteLine("Employee Added: " + employeeProfile.Name);
             }
         }
+        public void addEmployeeWithThread(List<EmployeeProfile> employeeProfiles)
+        {
+            foreach (EmployeeProfile employeeProfile in employeeProfiles)
+            {
+                Task Thread = new Task(() =>
+                {
+                    this.createRecord(employeeProfile);
+                    Console.WriteLine("Employee Added: " + employeeProfile.Name);
+                });
+                Thread.Start();
+            }
+        } 
         public void createRecord(EmployeeProfile profile)
         {
             SqlConnection connect = new SqlConnection(connectionString);
